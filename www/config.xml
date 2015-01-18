@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.mobapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>MobApp</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="yannick9letallec@gmail.com" href="http://touch-pico.fr">
+        Obexto Team 
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <gap:platform name="android" />
+</widget>

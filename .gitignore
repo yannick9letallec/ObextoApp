@@ -1,0 +1,13 @@
+## Vim swap files
+*.swp
+
+
+## ZIP Files
+*.zip
+*.log
+*.txt
+
+## REP NON UTILES
+hooks/*
+platforms/*
+plugins/*
