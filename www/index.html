@@ -55,6 +55,12 @@
 	<script type="text/javascript">
 		document.addEventListener( "deviceready", onDeviceReady, false );
 		document.addEventListener( "touchstart", clickButton, false );
+		// test notifications
+		if ( navigator.notification ){
+			navigator.notification.alert(message, null, title, 'OK');
+		} else {
+			alert( "notification KO" );
+		}
 		function clickButton () {
 			document.getElementById('button').innerHTML = "TEST OK";
 		}
