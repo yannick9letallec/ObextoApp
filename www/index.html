@@ -49,9 +49,9 @@
 	<br />
 	<label for="test"> LABEL TEST </label> <input id="test" type="text" placeholder="saisissez votre texte ici ..." />
 	<br />
-        <script type="text/javascript" src="cordova.js" charset="utf-8"></script>
-        <script type="text/javascript" src="js/index.js" charset="utf-8"></script>
-        <script type="text/javascript" src="imagepicker.js" charset="utf-8"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="imagepicker.js"></script>
 	<script type="text/javascript">
 		document.addEventListener( "deviceready", onDeviceReady, false );
 		function onDeviceReady() {
@@ -60,6 +60,15 @@
 			} else {
 				alert( 'OK PLUGIN : ' + window.imagePicker  );
 			}
+			window.imagePicker.getPictures(
+				function( results ) {
+					for( var i = 0; i < results.length; i++ ){
+						alert( 'Image URI : ' + results[i] );
+					}
+				}, function ( error ) {
+					alert( 'Errors : ' + error );
+				}
+			);
 			// document.write( window.imagePicker ));
 			// alert( Object.getOwnPropertyNames ( window.imagePicker ));
 		}	
