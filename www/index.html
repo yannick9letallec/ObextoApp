@@ -32,7 +32,7 @@
     	<div>
 	    <img src="./img/obexto.png" />
 	    <br />
-	    <button name="launchPhoto" type="button" value="TestButtonValue" > Prendre Une Photo </button>
+	    <button name="launchPhoto" type="button" value="TestButtonValue" onclick="testButton();"> Prendre Une Photo </button>
 	<a href="http://www.touch-pico.fr"> TOUCH OICO LINK </a>
 	</div>
         <div class="app">
@@ -60,6 +60,11 @@
 			} else {
 				alert( 'OK PLUGIN : ' + window.imagePicker  );
 			}
+
+			function testButton () {
+				alert( "click OK" );
+			}
+
 			window.imagePicker.getPictures(
 				function( results ) {
 					for( var i = 0; i < results.length; i++ ){
