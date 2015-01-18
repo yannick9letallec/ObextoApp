@@ -18,6 +18,6 @@
     <preference name="splash-screen-duration" value="5000" />
 
     <!-- SPLASH SCREEN -->
-    <gap:splash src="splash.png" gap:platform="android" gap:qualifier="mdpi" />
+    <gap:splash src="splash.png" gap:platform="android" gap:qualifier="mdpi" width="280px" />
 
 </widget>
