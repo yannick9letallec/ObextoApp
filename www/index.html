@@ -56,7 +56,7 @@
 		document.addEventListener( "deviceready", onDeviceReady, false );
 		document.addEventListener( "click", clickButton, false );
 		function clickButton () {
-			document.getElementsById('button').innerHTML = "TEST OK";
+			document.getElementById('button').innerHTML = "TEST OK";
 		}
 		function onDeviceReady() {
 			if ( window.imagePicker == "undefined" ){
