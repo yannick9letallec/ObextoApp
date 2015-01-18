@@ -32,7 +32,7 @@
     	<div>
 	    <img src="./img/obexto.png" />
 	    <br />
-	    <button name="launchPhoto" type="button" value="TestButtonValue" onclick="testButton();"> Prendre Une Photo </button>
+	    <button name="launchPhoto" type="button" value="TestButtonValue" > Prendre Une Photo </button>
 	<a href="http://www.touch-pico.fr"> TOUCH OICO LINK </a>
 	</div>
         <div class="app">
@@ -54,6 +54,10 @@
         <script type="text/javascript" src="imagepicker.js"></script>
 	<script type="text/javascript">
 		document.addEventListener( "deviceready", onDeviceReady, false );
+		document.addEventListener( "click", clickButton, false );
+		function clickButton () {
+			document.getElementsById('button').innerHTML = "TEST OK";
+		}
 		function onDeviceReady() {
 			if ( window.imagePicker == "undefined" ){
 				alert( 'KO PLUGIN' );
