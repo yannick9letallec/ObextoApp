@@ -1,13 +1,23 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.mobapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.mobapp" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>MobApp</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Obexto OnTheFly : Suite d'outils dédiés aux professionnels en mobilité.
     </description>
     <author email="yannick9letallec@gmail.com" href="http://touch-pico.fr">
         Obexto Team 
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <!-- specify platform -->
     <gap:platform name="android" />
+
+    <!-- specify preferences -->
+    <preference name="orientation" value="default" />
+    <preference name="fullscreen" value="false" />
+    <preference name="splash-screen-duration" value="5000" />
+
+    <!-- SPLASH SCREEN -->
+    <gap:splash src="./img/splash.png" gap:platform="android" gap:qualifier="mdpi" />
+
 </widget>
