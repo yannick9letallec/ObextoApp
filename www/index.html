@@ -55,7 +55,12 @@
 	<script type="text/javascript">
 		document.addEventListener( "deviceready", onDeviceReady, false );
 		function onDeviceReady() {
-			alert( Object.getOwnPropertyNames ( window.imagePicker ));
+			if ( window.imagePicker === "undefined" ){
+				alert( 'KO PLUGIN' );
+			} else {
+				alert( 'OK PLUGIN' );
+			}
+			// alert( Object.getOwnPropertyNames ( window.imagePicker ));
 		}	
 	</script>
 
