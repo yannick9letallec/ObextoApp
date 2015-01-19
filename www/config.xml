@@ -39,5 +39,7 @@
 
     <!-- PLUGINS -->
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" />
+    <gap:plugin name="SpeechRecognizer" value="com.phonegap.demo.SpeechRecognizer">
+
 
 </widget>
