@@ -59,9 +59,12 @@
 		function onLoad() { 
 			document.addEventListener( "deviceready", onDeviceReady, false );
 		}
+		function clickButton () {
+			document.getElementById('b1').innerHTML = "TEST OK";
+		}
 		// test notifications
 		function onDeviceReady() {
-			// document.getElementById( "b1" ).ontouchstart( "clickButton" );
+			document.getElementById( "b1" ).ontouchstart( "clickButton" );
 			if ( navigator.notification ){
 				alert( "notification OK" );
 			} else {
@@ -73,9 +76,6 @@
 				alert( "CAMERA KO" );
 			}
 			/*
-			function clickButton () {
-				document.getElementById('b1').innerHTML = "TEST OK";
-			}
 			// test load plugin
 			if ( window.imagePicker == "undefined" ){
 				alert( 'KO PLUGIN' );
