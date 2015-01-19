@@ -20,22 +20,9 @@
     <!-- SPLASH SCREEN -->
     <gap:splash src="splash.png"  />
 
-    <!-- FEATURES -->
-    <feature name="camera" required="true">
-	<param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
-     </feature>
-	<feature name="App">
-	    <param name="android-package" value="org.apache.cordova.App" />
-	</feature>
-	<feature name="Notification">
-	    <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
-	</feature>
-	<feature name="Vibration">
-	    <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
-	</feature>
-
     <!-- PLUGINS -->
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" />
+    <gap:plugin name="org.apache.cordova.camera.CameraLauncher" />
     <gap:plugin name="com.applicationnexus.plugins.speechrecognition" version="0.0.1" />
 
 
