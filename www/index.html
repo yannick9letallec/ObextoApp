@@ -57,23 +57,25 @@
         <script type="text/javascript" src="imagepicker.js"></script>
 	<script type="text/javascript">
 		document.addEventListener( "deviceready", onDeviceReady, false );
-		document.getElementById( "b1" ).onclick( "clickButton" );
 		// test notifications
-		if ( navigator.notification ){
-			navigator.notification.alert(message, null, title, 'OK');
-		} else {
-			alert( "notification KO" );
-		}
 		function clickButton () {
 			document.getElementById('b1').innerHTML = "TEST OK";
 		}
 		function onDeviceReady() {
+			document.getElementById( "b1" ).ontouchstart( "clickButton" );
+			// test load plugin
 			if ( window.imagePicker == "undefined" ){
 				alert( 'KO PLUGIN' );
 			} else {
 				alert( 'OK PLUGIN : ' + window.imagePicker  );
 			}
-
+			// test notification
+			if ( navigator.notification ){
+				navigator.notification.alert(message, null, title, 'OK');
+			} else {
+				alert( "notification KO" );
+			}
+			// 
 			function testButton () {
 				alert( "click OK" );
 			}
