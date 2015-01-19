@@ -45,29 +45,44 @@
                 <p class="event received">Device is Ready</p>
             </div>
         </div>
-	<p>
-	mlkfd lkfdsg dsfklng dklfg nmdlkf n
-	</p>
-	<b> dsflj gmsdlfg sldfkj nlkfg hn:kjhn kdlfg ndsk n</b>
+	<img id="img" src="" width="100%" style="display: none;"/>
+	<button id='supprimerImage' type='button' value='supprimer' style="display: none;"> SUPPRIMER </button>
 	<br />
 	<label for="test"> LABEL TEST </label> <input id="test" type="text" placeholder="saisissez votre texte ici ..." />
 	<br />
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="imagepicker.js"></script>
+        <script type="text/javascript" src="capture.js"></script>
 	<script type="text/javascript">
 		function onLoad() { 
 			document.addEventListener( "deviceready", onDeviceReady, false );
 		}
 		function clickButton () {
-			document.getElementById('b1').innerHTML = "TEST OK";
+			document.getElementById('b1').innerHTML = "BONJOUR MAUVOISIN !!";
 		}
 		function back () {
 			alert( "bouton retour enclenché" );
 		}
+		function takePicture () {
+			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { quality: 50, targetWidth:600 } ); 
+		}
+		function onPhotoDataSuccess( imageData ) {
+			  // On récupère le chemin de la photo
+			  npath = imageData.replace("file://localhost",'');
+			  var path = imageData.replace("file://localhost",'');
+			  // On affiche la preview
+			  document.getElementById('img').src = path;
+			  document.getElementById('img').display = "visible";;
+			  // On affiche le boutton de suppression
+			  document.getElementById('supprimerImage').display = "visible";;
+		}
+		function onFail ( ) {
+			alert( "Impossible de lancer l'appreil photo"  );
+		}
 		// test notifications
 		function onDeviceReady() {
 			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
+			document.getElementById( "b2" ).addEventListener( "touchstart", takePicture, false );
 			document.addEventListener( "backbutton", back, false );
 
 			if ( navigator.notification ){
@@ -80,31 +95,6 @@
 			} else {
 				alert( "CAMERA KO" );
 			}
-			/*
-			// test load plugin
-			if ( window.imagePicker == "undefined" ){
-				alert( 'KO PLUGIN' );
-			} else {
-				alert( 'OK PLUGIN : ' + window.imagePicker  );
-			}
-			// test notification
-			// 
-			function testButton () {
-				alert( "click OK" );
-			}
-
-			window.imagePicker.getPictures(
-				function( results ) {
-					for( var i = 0; i < results.length; i++ ){
-						alert( 'Image URI : ' + results[i] );
-					}
-				}, function ( error ) {
-					alert( 'Errors : ' + error );
-				}
-			);
-			// document.write( window.imagePicker ));
-			// alert( Object.getOwnPropertyNames ( window.imagePicker ));
-			*/
 		}	
 
 	</script>
