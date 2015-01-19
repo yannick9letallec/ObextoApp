@@ -63,7 +63,7 @@
 		function onDeviceReady() {
 			document.getElementById( "b1" ).ontouchstart( "clickButton" );
 			if ( navigator.notification ){
-				navigator.notification.alert(message, null, title, 'OK');
+				alert( "notification OK" );
 			} else {
 				alert( "notification KO" );
 			}
