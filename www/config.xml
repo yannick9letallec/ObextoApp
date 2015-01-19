@@ -22,7 +22,7 @@
 
     <!-- PLUGINS -->
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" />
-    <gap:plugin name="org.apache.cordova.camera.CameraLauncher" />
+    <gap:plugin name="org.wbt11a.nativecamera" version="0.1.4" />
     <gap:plugin name="com.applicationnexus.plugins.speechrecognition" version="0.0.1" />
 
 
