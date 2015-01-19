@@ -32,7 +32,7 @@
     	<div>
 	    <img src="./img/obexto.png" />
 	    <br />
-	    <button id="b1" name="launchPhoto" type="button" value="TestButtonValue" > Prendre Une Photo </button>
+	    <button id="b2" name="launchPhoto" type="button" value="TestButtonValue" > Prendre Une Photo </button>
 	    <br />
 	    <button id="b1" name="launchPhoto" type="button" value="TestButtonValue" ontouchstart="javascript: alert('BUTTON TOUCH');"> Prendre Une Photo </button>
 
@@ -58,11 +58,11 @@
 	<script type="text/javascript">
 		document.addEventListener( "deviceready", onDeviceReady, false );
 		// test notifications
-		function clickButton () {
-			document.getElementById('b1').innerHTML = "TEST OK";
-		}
 		function onDeviceReady() {
 			document.getElementById( "b1" ).ontouchstart( "clickButton" );
+			function clickButton () {
+				document.getElementById('b2').innerHTML = "TEST OK";
+			}
 			// test load plugin
 			if ( window.imagePicker == "undefined" ){
 				alert( 'KO PLUGIN' );
