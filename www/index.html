@@ -32,7 +32,7 @@
     	<div>
 	    <img src="./img/obexto.png" />
 	    <br />
-	    <button name="launchPhoto" type="button" value="TestButtonValue" > Prendre Une Photo </button>
+	    <button id="b1" name="launchPhoto" type="button" value="TestButtonValue" > Prendre Une Photo </button>
 	<a href="http://www.touch-pico.fr"> TOUCH OICO LINK </a>
 	</div>
         <div class="app">
@@ -54,7 +54,7 @@
         <script type="text/javascript" src="imagepicker.js"></script>
 	<script type="text/javascript">
 		document.addEventListener( "deviceready", onDeviceReady, false );
-		document.addEventListener( "touchstart", clickButton, false );
+		document.getElementById( "b1" ).onclick( "clickButton" );
 		// test notifications
 		if ( navigator.notification ){
 			navigator.notification.alert(message, null, title, 'OK');
@@ -62,7 +62,7 @@
 			alert( "notification KO" );
 		}
 		function clickButton () {
-			document.getElementById('button').innerHTML = "TEST OK";
+			document.getElementById('b1').innerHTML = "TEST OK";
 		}
 		function onDeviceReady() {
 			if ( window.imagePicker == "undefined" ){
