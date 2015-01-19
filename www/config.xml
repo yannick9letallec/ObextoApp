@@ -27,6 +27,15 @@
     <feature name="http://api.phonegap.com/1.0/geolocation" />
     <feature name="http://api.phonegap.com/1.0/media" />
     <feature name="http://api.phonegap.com/1.0/notification" />
+	<feature name="App">
+	    <param name="android-package" value="org.apache.cordova.App" />
+	</feature>
+	<feature name="Notification">
+	    <param name="android-package" value="org.apache.cordova.Notification" />
+	</feature>
+	<feature name="Vibration">
+	    <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
+	</feature>
 
     <!-- PLUGINS -->
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" />
