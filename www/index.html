@@ -67,7 +67,7 @@
 			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: 1,  quality: 50, targetWidth:600 } ); 
 		}
 		function onPhotoDataSuccess( imageData ) {
-			  document.getElementById('img').src = 'data:image/jpeg;base64,' + imageData );
+			  document.getElementById('img').src = 'data:image/jpeg;base64,' + imageData;
 			  // On récupère le chemin de la photo
 			  /*
 			  npath = imageData.replace("file://localhost",'');
