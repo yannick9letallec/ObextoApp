@@ -72,21 +72,22 @@
 		}
 		function takePicture () {
 			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: 1,  quality: 50, targetWidth:600 } ); 
-		}
-		function onPhotoDataSuccess( imageData ) {
-			  document.getElementById('img').src = 'data:image/jpeg;base64,' + imageData;
-			  // On récupère le chemin de la photo
-			  /*
-			  npath = imageData.replace("file://localhost",'');
-			  var path = imageData.replace("file://localhost",'');
-			  // On affiche la preview
-			  document.getElementById('img').display = "visible";;
-			  // On affiche le boutton de suppression
-			  document.getElementById('supprimerImage').display = "visible";;
-			  */
-		}
-		function onFail ( ) {
-			alert( "Impossible de lancer l'appreil photo"  );
+
+			function onPhotoDataSuccess( imageData ) {
+				  document.getElementById('img').src = 'data:image/jpeg;base64,' + imageData;
+				  // On récupère le chemin de la photo
+				  /*
+				  npath = imageData.replace("file://localhost",'');
+				  var path = imageData.replace("file://localhost",'');
+				  // On affiche la preview
+				  document.getElementById('img').display = "visible";;
+				  // On affiche le boutton de suppression
+				  document.getElementById('supprimerImage').display = "visible";;
+				  */
+			}
+			function onFail ( ) {
+				alert( "Impossible de lancer l'appreil photo"  );
+			}
 		}
 		function notifCallback () {
 			alert( 'NOTIF KKKKO' );
