@@ -20,14 +20,13 @@
     <!-- SPLASH SCREEN -->
     <gap:splash src="splash.png"  />
 
-    <!-- FEATURES 
+    <!-- FEATURES -->
     <feature name="http://api.phonegap.com/1.0/camera" />
     <feature name="http://api.phonegap.com/1.0/contacts" />
     <feature name="http://api.phonegap.com/1.0/file" />
     <feature name="http://api.phonegap.com/1.0/geolocation" />
     <feature name="http://api.phonegap.com/1.0/media" />
     <feature name="http://api.phonegap.com/1.0/notification" />
--->
 
     <!-- PLUGINS -->
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" />
