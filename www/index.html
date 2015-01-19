@@ -94,7 +94,7 @@
 		}
 		// test notifications
 		function onDeviceReady() {
-			alert( navigator.userAgent + " " + navigator.notification );
+			alert( device.cordova );
 			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
 			document.getElementById( "b3" ).addEventListener( "touchstart", takePicture, false );
 			document.addEventListener( "menubutton", back, false );
