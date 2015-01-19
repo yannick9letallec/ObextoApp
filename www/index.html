@@ -28,13 +28,13 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
     </head>
-    <body >
+    <body onload="onLoad()">
     	<div>
 	    <img src="./img/obexto.png" />
+	    <br /><br /><br /><br />
+	    <button id="b1" name="launchPhoto" type="button" value="TestButtonValue" > Prendre Une Photo </button>
 	    <br />
-	    <button id="b2" name="launchPhoto" type="button" value="TestButtonValue" > Prendre Une Photo </button>
-	    <br />
-	    <button id="b1" name="launchPhoto" type="button" value="TestButtonValue" ontouchstart="javascript: alert('BUTTON TOUCH');"> Prendre Une Photo </button>
+	    <button id="b2" name="launchPhoto" type="button" value="TestButtonValue" ontouchstart="javascript: alert('BUTTON TOUCH');"> Prendre Une Photo </button>
 
 	<a href="http://www.touch-pico.fr"> TOUCH OICO LINK </a>
 	</div>
@@ -56,13 +56,26 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="imagepicker.js"></script>
 	<script type="text/javascript">
-		document.addEventListener( "deviceready", onDeviceReady, false );
+		function onLoad() { 
+			document.addEventListener( "deviceready", onDeviceReady, false );
+		}
 		// test notifications
 		function onDeviceReady() {
 			document.getElementById( "b1" ).ontouchstart( "clickButton" );
 			function clickButton () {
-				document.getElementById('b2').innerHTML = "TEST OK";
+				document.getElementById('b1').innerHTML = "TEST OK";
 			}
+			if ( navigator.notification ){
+				navigator.notification.alert(message, null, title, 'OK');
+			} else {
+				alert( "notification KO" );
+			}
+			if ( navigator.camera ){
+				alert( "CAMERA OK" );
+			} else {
+				alert( "CAMERA KO" );
+			}
+			/*
 			// test load plugin
 			if ( window.imagePicker == "undefined" ){
 				alert( 'KO PLUGIN' );
@@ -70,11 +83,6 @@
 				alert( 'OK PLUGIN : ' + window.imagePicker  );
 			}
 			// test notification
-			if ( navigator.notification ){
-				navigator.notification.alert(message, null, title, 'OK');
-			} else {
-				alert( "notification KO" );
-			}
 			// 
 			function testButton () {
 				alert( "click OK" );
@@ -91,7 +99,9 @@
 			);
 			// document.write( window.imagePicker ));
 			// alert( Object.getOwnPropertyNames ( window.imagePicker ));
+			*/
 		}	
+
 	</script>
 
     </body>
