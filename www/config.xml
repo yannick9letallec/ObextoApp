@@ -30,5 +30,6 @@
 
     <!-- PLUGINS -->
     <gap:plugin name="org.apache.cordova.dialogs" version="1.0.4" />
+    <gap:plugin name="org.apache.cordova.vibration" version="1.0.4" />
 
 </widget>
