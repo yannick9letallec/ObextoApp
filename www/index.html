@@ -58,6 +58,12 @@
 		function onLoad() { 
 			document.addEventListener( "deviceready", onDeviceReady, false );
 		}
+		function up () {
+			alert ( "UP !! " );
+		}
+		function down () {
+			alert ( "DOWN !! " );
+		}
 		function clickButton () {
 			document.getElementById('b1').innerHTML = "BONJOUR MAUVOISIN !!";
 		}
@@ -86,7 +92,9 @@
 		function onDeviceReady() {
 			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
 			document.getElementById( "b2" ).addEventListener( "touchstart", takePicture, false );
-			document.addEventListener( "backbutton", back, false );
+			document.addEventListener( "menubutton", back, false );
+			document.addEventListener( "volumeupbutton", up, false );
+			document.addEventListener( "volumedownbutton", down, false );
 
 			if ( navigator.notification ){
 				alert( "notification OK" );
