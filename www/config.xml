@@ -22,18 +22,18 @@
     <!-- specify preferences -->
 <platform name="android">
     <!-- you can use any density that exists in the Android project -->
-    <splash src="splash-1.png" orientation="landscape" />
-<!--     <splash src="splash.png" density="land-ldpi"/>
+ <!--      <gap:splash src="splash-1.png" orientation="landscape" />
+  <splash src="splash.png" density="land-ldpi"/>
     <splash src="splash.png" density="land-mdpi"/>
     <splash src="splash.png" density="land-xhdpi"/> -->
 
-    <splash src="splash-2.png" orientation="portrait" />
-<!--   <splash src="splash.png" density="port-ldpi"/>
+ <!--      <gap:splash src="splash-2.png" orientation="portrait" />
+  <splash src="splash.png" density="port-ldpi"/>
     <splash src="splash.png" density="port-mdpi"/>
     <splash src="splash.png" density="port-xhdpi"/> -->
 </platform>
 
-    <!-- SPLASH SCREEN -->
+    <!-- SPLASH SCREEN  -->
     <gap:splash src="splash.png"  />
 
     <!-- PLUGINS -->
