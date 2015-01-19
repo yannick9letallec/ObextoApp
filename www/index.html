@@ -88,6 +88,9 @@
 		function onFail ( ) {
 			alert( "Impossible de lancer l'appreil photo"  );
 		}
+		function notifCallback () {
+			alert( 'NOTIF KKKKO' );
+		}
 		// test notifications
 		function onDeviceReady() {
 			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
@@ -98,7 +101,7 @@
 
 			if ( navigator.notification ){
 				//alert( "notification OK" );
-				navigator.notification.alert( 'PhoneGap is Ready to play with Devices !!' );
+				navigator.notification.alert( 'PhoneGap is Ready to play with Devices !!', notifCallback, 'NOTIF OK', 'OK !' );
 			} else {
 				alert( "notification KO" );
 			}
