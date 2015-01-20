@@ -97,7 +97,7 @@
 		function getCoords() {
 			navigator.geolocation.getCurrentPosition( geoSuccess, geoError );
 			function geoSuccess( position ) {
-				retunr 'Latitude : ' + position.coords.latitude + "\n" + 'Longitude : ' + position.coords.longitude;
+				return 'Latitude : ' + position.coords.latitude + "\n" + 'Longitude : ' + position.coords.longitude;
 			}
 		// test notifications
 		function onDeviceReady() {
