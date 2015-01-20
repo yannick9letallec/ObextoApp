@@ -94,6 +94,11 @@
 		function notifCallback () {
 			alert( 'NOTIF KKKKO' );
 		}
+		function getCoords() {
+			navigator.geolocation.getCurrentPosition( geoSuccess, geoError );
+			function geoSuccess( position ) {
+				retunr 'Latitude : ' + position.coords.latitude + "\n" + 'Longitude : ' + position.coords.longitude;
+			}
 		// test notifications
 		function onDeviceReady() {
 			// alert( device.phoneGap );
@@ -115,7 +120,7 @@
 				alert( "CAMERA KO" );
 			}
 			if ( navigator.geolocation ){
-				alert( "GEOLOC OK" + navigator.geolocation );
+				alert( "GEOLOC OK" + getCoords );
 			} else {
 				alert( "GEOLOC KO" );
 			}
