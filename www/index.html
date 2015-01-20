@@ -95,6 +95,11 @@
 			alert( 'NOTIF KKKKO' );
 		}
 		// test notifications
+		document.addEventListener("deviceready", function(){
+			navigator.notification.vibrate(1000);
+			navigator.notification.alert("Hello", notifCallback, 'Notif TITLE', 'OK!' );
+		        navigator.notification.beep(1);   
+		 }, false );
 		function onDeviceReady() {
 			// alert( device.phoneGap );
 			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
