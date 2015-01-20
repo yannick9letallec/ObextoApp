@@ -33,12 +33,13 @@
     <gap:splash src="splash-2.png" gap:qualifier="port-xhdpi" gap:platform="android" /> 
 </platform>
  
-    <!-- SPLASH SCREEN 
+    <!-- SPLASH SCREEN  -->
     <gap:splash src="splash-2.png"  orientation="portrait"/>
     <gap:splash src="splash-1.png"  orientation="landscape"/>
- -->
+
     <!-- PLUGINS -->
 	<gap:plugin name="org.apache.cordova.camera" />
+	<gap:plugin name="org.apache.cordova.notification" />
 
 	<!-- PREFERENCES -->
      <preference name="SplashScreen" value="screen" />
