@@ -97,7 +97,7 @@
 			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: x,  quality: 50, targetWidth:600, destinationType: Camera.DestinationType.DATA_URL } ); 
 
 			function onPhotoDataSuccess( imageSrc ) {
-				  document.getElementById('img').src = imageSrc;
+				  document.getElementById('img').src = "data:image/jpeg;base64," + imageSrc;
 				  document.getElementById('img').display = "initial";
 				  alert( imageSrc );
 				  // On récupère le chemin de la photo
@@ -109,8 +109,8 @@
 				  document.getElementById('supprimerImage').display = "visible";;
 				  */
 			}
-			function onFail ( ) {
-				alert( "Impossible de lancer l'appreil photo"  );
+			function onFail ( msg ) {
+				alert( "Impossible de lancer l'appreil photo : " + msg  );
 			}
 		}
 		function notifCallback () {
