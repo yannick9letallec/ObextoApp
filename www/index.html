@@ -100,10 +100,12 @@
 		function getCoords() {
 			navigator.geolocation.getCurrentPosition( geoSuccess, geoError );
 			function geoSuccess( position ) {
-				return 'Latitude : ' + position.coords.latitude + "\n" + 'Longitude : ' + position.coords.longitude;
+				var res = '[OK] :: Latitude : ' + position.coords.latitude + "\n" + 'Longitude : ' + position.coords.longitude;
+				document.getElementById( 'coordsReceiver' ).innerHTML = res;
 			}
 			function geoError ( error ) {
-				return "GEOLOC ERROR : code = " + error.code + " : message : " + error.message;
+				res = "[KO] :: GEOLOC ERROR : code = " + error.code + " : message : " + error.message;
+				document.getElementById( 'coordsReceiver' ).innerHTML = res;
 			}
 		}
 		// test notifications
