@@ -24,12 +24,12 @@
     <!-- you can use any density that exists in the Android project  -->
      <gap:splash src="splash-1.png" gap:qualifier="land-ldpi" gap:platform="android" />
   <gap:splash src="splash-1.png" gap:qualifier="land-mdpi" gap:platform="android" />
-    <gap:splash src="splash-1.png" gap:qualifier="land-xdpi" gap:platform="android" />
+    <gap:splash src="splash-1.png" gap:qualifier="land-hdpi" gap:platform="android" />
     <gap:splash src="splash-1.png" gap:qualifier="land-xhdpi" gap:platform="android" /> 
 
-     <gap:splash src="splash-2.png" gap:qualifier="port-xdpi"  gap:platform="android" />
-  <gap:splash src="splash-2.png" gap:qualifier="port-ldpi" gap:platform="android" />
-    <gap:splash src="splash-2.png" gap:qualifier="port-mdpi" gap:platform="android" />
+     <gap:splash src="splash-2.png" gap:qualifier="port-ldpi"  gap:platform="android" />
+  <gap:splash src="splash-2.png" gap:qualifier="port-mdpi" gap:platform="android" />
+    <gap:splash src="splash-2.png" gap:qualifier="port-hdpi" gap:platform="android" />
     <gap:splash src="splash-2.png" gap:qualifier="port-xhdpi" gap:platform="android" /> 
 </platform>
  
