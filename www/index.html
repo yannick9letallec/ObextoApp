@@ -29,7 +29,7 @@
         <title>Hello World</title>
     </head>
     <body onload="onLoad();">
-    	<div>
+    	<div style="text-align: center;">
 	    <img src="./img/obexto.png" />
 	    <br /><br /><br /><br />
 	    <button id="b1" name="launchPhoto" type="button" value="TestButtonValue" > CHANGE TEXTE </button>
@@ -74,6 +74,12 @@
 		function back () {
 			alert( "bouton retour enclenché" );
 		}
+		function selectPicture () {
+			navigator.notification.prompt( "Image Source ?", photoPromptCallback, "Sélection Image Source", ["Appareil Photo", "Gallery" ], 'testing lasr option' ); 
+		}
+		function photoPromptCallBack( results ) {
+			alert( "POST PROMPT" + results.buttonIndex.length );
+		}
 		function takePicture () {
 			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: 1,  quality: 50, targetWidth:600 } ); 
 
@@ -112,7 +118,7 @@
 		function onDeviceReady() {
 			// alert( device.phoneGap );
 			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
-			document.getElementById( "b3" ).addEventListener( "touchstart", takePicture, false );
+			document.getElementById( "b3" ).addEventListener( "touchstart", selectPicture, false );
 			document.addEventListener( "menubutton", back, false );
 			document.addEventListener( "volumeupbutton", up, false );
 			document.addEventListener( "volumedownbutton", down, false );
