@@ -86,9 +86,9 @@
 		}
 		function photoPromptCallback( results ) {
 			if( results.buttonIndex == 1 ) {
-				takePicture( "Camera.PictureSourceType.CAMERA" );
-			} else if ( results.buttonIndex == 2 ) {
 				takePicture( 1 );
+			} else if ( results.buttonIndex == 2 ) {
+				takePicture( 2 );
 			} 
 		}
 		function takePicture ( x ) {
