@@ -85,10 +85,14 @@
 			} 
 		}
 		function photoPromptCallback( results ) {
-			alert( "POST PROMPT" + results.buttonIndex + "  " + results.inout1 );
+			if( results.buttonIndex == 1 ) {
+				takePicture( "Camera.PictureSourceType.CAMERA" );
+			} else if ( results.buttonIndex == 2 ) {
+				takePicture( 1 );
+			} 
 		}
-		function takePicture () {
-			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: 1,  quality: 50, targetWidth:600 } ); 
+		function takePicture ( x ) {
+			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: x,  quality: 50, targetWidth:600 } ); 
 
 			function onPhotoDataSuccess( imageData ) {
 				  document.getElementById('img').src = imageData;
