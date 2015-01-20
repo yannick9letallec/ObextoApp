@@ -96,10 +96,10 @@
 			// URL :: Camera.DestinationType.FILE_URI
 			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: x,  quality: 50, targetWidth:600, destinationType: Camera.DestinationType.DATA_URL } ); 
 
-			function onPhotoDataSuccess( image ) {
-				  document.getElementById('img').src = image;
+			function onPhotoDataSuccess( imageSrc ) {
+				  document.getElementById('img').src = imageSrc;
 				  document.getElementById('img').display = "initial";
-				  alert( document.getElementById('img').src  );
+				  alert( imageSrc );
 				  // On récupère le chemin de la photo
 				  /*
 				  npath = imageData.replace("file://localhost",'');
