@@ -85,19 +85,19 @@
 			} 
 		}
 		function photoPromptCallback( results ) {
-			if( results.buttonIndex == 1 ) {
+			if( results.buttonIndex == 1 ) { // CAMERA
 				takePicture( 1 );
-			} else if ( results.buttonIndex == 2 ) {
+			} else if ( results.buttonIndex == 2 ) { // GALLERY
 				takePicture( 2 );
-			} else if ( results.buttonIndex == 3 ) {
-				takePicture( 3 );
-			} 
+			}
 		}
 		function takePicture ( x ) {
-			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: x,  quality: 50, targetWidth:600 } ); 
+			// Base64 :: Camera.DestinationType.DATA_URL
+			// URL :: Camera.DestinationType.FILE_URI
+			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: x,  quality: 50, targetWidth:600, destinationType: Camera.Destination.DATA_URL } ); 
 
-			function onPhotoDataSuccess( imageData ) {
-				  document.getElementById('img').src = imageData;
+			function onPhotoDataSuccess( image ) {
+				  document.getElementById('img').src = image;
 				  document.getElementById('img').display = "initial";
 				  alert( imageData );
 				  // On récupère le chemin de la photo
