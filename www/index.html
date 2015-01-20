@@ -99,7 +99,7 @@
 			function onPhotoDataSuccess( image ) {
 				  document.getElementById('img').src = image;
 				  document.getElementById('img').display = "initial";
-				  alert( imageData );
+				  alert( document.getElementById('img').src  );
 				  // On récupère le chemin de la photo
 				  /*
 				  npath = imageData.replace("file://localhost",'');
