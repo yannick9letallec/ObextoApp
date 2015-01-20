@@ -75,11 +75,13 @@
 
 			function onPhotoDataSuccess( imageData ) {
 				  document.getElementById('img').src = 'data:image/jpeg;base64,' + imageData;
+				  document.getElementById('img').display = "visible";;
+				  alert( imageData );
 				  // On récupère le chemin de la photo
+				  /*
 				  npath = imageData.replace("file://localhost",'');
 				  var path = imageData.replace("file://localhost",'');
 				  // On affiche la preview
-				  document.getElementById('img').display = "visible";;
 				  // On affiche le boutton de suppression
 				  document.getElementById('supprimerImage').display = "visible";;
 				  */
