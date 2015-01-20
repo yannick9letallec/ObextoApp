@@ -39,7 +39,8 @@
 
     <!-- PLUGINS -->
 	<gap:plugin name="org.apache.cordova.camera" />
-	<gap:plugin name="org.apache.cordova.notification" />
+	<gap:plugin name="org.apache.cordova.dialogs.Notification" />
+	<gap:plugin name="org.apache.cordova.vibration.Vibration" />
 
 	<!-- PREFERENCES -->
      <preference name="SplashScreen" value="screen" />
