@@ -12,6 +12,9 @@
     <!-- specify platform -->
     <gap:platform name="android" />
 
+	<feature name="Notification">
+		<param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+	</feature>
 	<feature name="App">
 		<param name="android-package" value="org.apache.cordova.App" />
 	</feature>
@@ -21,21 +24,21 @@
 
     <!-- specify preferences -->
 <platform name="android">
-    <!-- you can use any density that exists in the Android project
-     <gap:splash src="splash-1.png" gap:qualifier="land-ldpi" gap:platform="android" />
-  <gap:splash src="splash-1.png" gap:qualifier="land-mdpi" gap:platform="android" />
+    <gap:splash src="splash-1.png" gap:qualifier="land-ldpi" gap:platform="android" />
+    <gap:splash src="splash-1.png" gap:qualifier="land-mdpi" gap:platform="android" />
     <gap:splash src="splash-1.png" gap:qualifier="land-hdpi" gap:platform="android" />
     <gap:splash src="splash-1.png" gap:qualifier="land-xhdpi" gap:platform="android" /> 
 
-     <gap:splash src="splash-2.png" gap:qualifier="port-ldpi"  gap:platform="android" />
-  <gap:splash src="splash-2.png" gap:qualifier="port-mdpi" gap:platform="android" />
+    <gap:splash src="splash-2.png" gap:qualifier="port-ldpi"  gap:platform="android" />
+    <gap:splash src="splash-2.png" gap:qualifier="port-mdpi" gap:platform="android" />
     <gap:splash src="splash-2.png" gap:qualifier="port-hdpi" gap:platform="android" />
     <gap:splash src="splash-2.png" gap:qualifier="port-xhdpi" gap:platform="android" /> 
-   -->
+
 </platform>
-    <!-- SPLASH SCREEN  -->
+    <!-- SPLASH SCREEN
     <gap:splash src="splash-2.png"  orientation="port"/>
     <gap:splash src="splash-1.png"  orientation="land"/>
+  -->
 
     <!-- PLUGINS -->
 	<gap:plugin name="org.apache.cordova.camera" />
