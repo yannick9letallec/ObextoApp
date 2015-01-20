@@ -18,9 +18,6 @@
 	<feature name="App">
 		<param name="android-package" value="org.apache.cordova.App" />
 	</feature>
-	<feature name="SplashScreen">
-		<param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
-	</feature>
 
     <!-- specify preferences -->
 <platform name="android">
