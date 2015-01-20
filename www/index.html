@@ -94,7 +94,7 @@
 		function takePicture ( x ) {
 			// Base64 :: Camera.DestinationType.DATA_URL
 			// URL :: Camera.DestinationType.FILE_URI
-			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: x,  quality: 50, targetWidth:600, destinationType: Camera.DestinationType.DATA_URL } ); 
+			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: x,  quality: 5, targetWidth:600, destinationType: Camera.DestinationType.DATA_URL } ); 
 
 			function onPhotoDataSuccess( imageSrc ) {
 				  document.getElementById('img').src = "data:image/jpeg;base64," + imageSrc;
