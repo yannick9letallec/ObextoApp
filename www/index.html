@@ -76,7 +76,7 @@
 		}
 		function selectPictureSrc () {
 			try {
-				navigator.notification.prompt( "Image Source ?", photoPromptCallback, "Sélection Image Source", ["OK", "KO" ], 'testing last option' ); 
+				navigator.notification.prompt( "Image Source ?", photoPromptCallback, "Sélection Image Source", ["CAMERA", "GALLERY" ], 'testing last option' ); 
 			} catch ( e ) {
 				alert( e.message );
 			} finally {
@@ -85,7 +85,7 @@
 			} 
 		}
 		function photoPromptCallback( results ) {
-			alert( "POST PROMPT" + results);
+			alert( "POST PROMPT" + results.length );
 		}
 		function takePicture () {
 			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: 1,  quality: 50, targetWidth:600 } ); 
