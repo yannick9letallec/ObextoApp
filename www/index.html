@@ -94,10 +94,10 @@
 		function takePicture ( x ) {
 			// Base64 :: Camera.DestinationType.DATA_URL
 			// URL :: Camera.DestinationType.FILE_URI
-			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: x,  quality: 5, targetWidth:600, destinationType: Camera.DestinationType.DATA_URL } ); 
+			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: x,  quality: 5, targetWidth:600, destinationType: Camera.DestinationType.FILE_URI } ); 
 
 			function onPhotoDataSuccess( imageSrc ) {
-				  document.getElementById('img').src = "data:image/jpeg;base64," + imageSrc;
+				  document.getElementById('img').src = + imageSrc; //  "data:image/jpeg;base64,"
 				  document.getElementById('img').display = "initial";
 				  alert( imageSrc );
 				  // On récupère le chemin de la photo
