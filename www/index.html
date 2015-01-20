@@ -97,7 +97,7 @@
 			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: x,  quality: 5, targetWidth:600, destinationType: Camera.DestinationType.FILE_URI } ); 
 
 			function onPhotoDataSuccess( imageSrc ) {
-				  document.getElementById('img').src = + imageSrc; //  "data:image/jpeg;base64,"
+				  document.getElementById('img').src = imageSrc; //  "data:image/jpeg;base64,"
 				  document.getElementById('img').display = "initial";
 				  alert( imageSrc );
 				  // On récupère le chemin de la photo
