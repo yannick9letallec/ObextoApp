@@ -76,7 +76,7 @@
 		}
 		function selectPictureSrc () {
 			try {
-				navigator.notification.prompt( "Image Source ?", photoPromptCallback, "Sélection Image Source", ["CAMERA", "GALLERY" ], 'testing last option' ); 
+				navigator.notification.prompt( "Image Source ?", photoPromptCallback, "Sélection Image Source", ["CAMERA", "GALLERY", "TEST" ] ); 
 			} catch ( e ) {
 				alert( e.message );
 			} finally {
@@ -89,6 +89,9 @@
 				takePicture( 1 );
 			} else if ( results.buttonIndex == 2 ) {
 				takePicture( 2 );
+			} 
+			} else if ( results.buttonIndex == 3 ) {
+				takePicture( 3 );
 			} 
 		}
 		function takePicture ( x ) {
