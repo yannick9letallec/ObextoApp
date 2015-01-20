@@ -51,6 +51,9 @@
 	<br />
 	<label for="test"> LABEL TEST </label> <input id="test" type="text" placeholder="saisissez votre texte ici ..." />
 	<br />
+	<br />
+	<br />
+	<div id="coordsReceiver"> </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="camera.js"></script>
@@ -102,6 +105,7 @@
 			function geoError ( error ) {
 				return "GEOLOC ERROR : code = " + error.code + " : message : " + error.message;
 			}
+		}
 		// test notifications
 		function onDeviceReady() {
 			// alert( device.phoneGap );
@@ -123,10 +127,11 @@
 				alert( "CAMERA KO" );
 			}
 			if ( navigator.geolocation ){
-				alert( "GEOLOC OK" + getCoords() );
+				alert( "GEOLOC OK" );
 			} else {
 				alert( "GEOLOC KO" );
 			}
+			getCoords();
 		}	
 
 	</script>
