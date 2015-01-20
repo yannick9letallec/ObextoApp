@@ -71,14 +71,14 @@
 		function clickButton () {
 			document.getElementById('b1').innerHTML = "BONJOUR MAUVOISIN !!";
 		}
-		function back () {
-			alert( "bouton retour enclenché" );
+		function menu () {
+			alert( "MENU SELECT" );
 		}
-		function selectPicture () {
-			navigator.notification.prompt( "Image Source ?", photoPromptCallback, "Sélection Image Source", ["Appareil Photo", "Gallery" ], 'testing lasr option' ); 
+		function selectPictureSrc () {
+			navigator.notification.prompt( "Image Source ?", photoPromptCallback, "Sélection Image Source", ["OK", "KO" ], 'testing last option' ); 
 		}
 		function photoPromptCallBack( results ) {
-			alert( "POST PROMPT" + results.buttonIndex.length );
+			alert( "POST PROMPT" + results.buttonIndex );
 		}
 		function takePicture () {
 			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: 1,  quality: 50, targetWidth:600 } ); 
@@ -118,8 +118,8 @@
 		function onDeviceReady() {
 			// alert( device.phoneGap );
 			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
-			document.getElementById( "b3" ).addEventListener( "touchstart", selectPicture, false );
-			document.addEventListener( "menubutton", back, false );
+			document.getElementById( "b3" ).addEventListener( "touchstart", selectPictureSrc, false );
+			document.addEventListener( "menubutton", menu, false );
 			document.addEventListener( "volumeupbutton", up, false );
 			document.addEventListener( "volumedownbutton", down, false );
 
