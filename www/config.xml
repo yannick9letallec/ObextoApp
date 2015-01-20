@@ -27,14 +27,15 @@
     <gap:splash src="splash-1.png" density="land-xdpi"/>
     <gap:splash src="splash-1.png" density="land-xhdpi"/> 
 
-     <gap:splash src="splash-2.png" orientation="portrait" />
+     <gap:splash src="splash-2.png" density="port-xdpi" />
   <gap:splash src="splash-2.png" density="port-ldpi"/>
     <gap:splash src="splash-2.png" density="port-mdpi"/>
     <gap:splash src="splash-2.png" density="port-xhdpi"/> 
 </platform>
  
     <!-- SPLASH SCREEN  -->
-    <gap:splash src="splash-2.png"  />
+    <gap:splash src="splash-2.png"  orientation="portrait"/>
+    <gap:splash src="splash-1.png"  orientation="landscape"/>
 
     <!-- PLUGINS -->
 	<gap:plugin name="org.apache.cordova.camera" />
