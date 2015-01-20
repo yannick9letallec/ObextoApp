@@ -75,7 +75,8 @@
 			alert( "MENU SELECT" );
 		}
 		function selectPictureSrc () {
-			navigator.notification.prompt( "Image Source ?", photoPromptCallback, "Sélection Image Source", ["OK", "KO" ], 'testing last option' ); 
+			navigator.notification.alert( 'PhoneGap is Ready to play with Devices !!', notifCallback, 'NOTIF OK', 'OK !' );
+			// navigator.notification.prompt( "Image Source ?", photoPromptCallback, "Sélection Image Source", ["OK", "KO" ], 'testing last option' ); 
 		}
 		function photoPromptCallBack( results ) {
 			alert( "POST PROMPT" + results.buttonIndex );
