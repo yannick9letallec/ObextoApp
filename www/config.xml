@@ -22,27 +22,27 @@
     <!-- specify preferences -->
 <platform name="android">
     <!-- you can use any density that exists in the Android project  -->
-     <gap:splash src="splash-1.png" density="land-ldpi"/>
-  <gap:splash src="splash-1.png" density="land-mdpi"/>
-    <gap:splash src="splash-1.png" density="land-xdpi"/>
-    <gap:splash src="splash-1.png" density="land-xhdpi"/> 
+     <gap:splash src="splash-1.png" gap:qualifier="land-ldpi" gap:platform="android" />
+  <gap:splash src="splash-1.png" gap:qualifier="land-mdpi" gap:platform="android" />
+    <gap:splash src="splash-1.png" gap:qualifier="land-xdpi" gap:platform="android" />
+    <gap:splash src="splash-1.png" gap:qualifier="land-xhdpi" gap:platform="android" /> 
 
-     <gap:splash src="splash-2.png" density="port-xdpi" />
-  <gap:splash src="splash-2.png" density="port-ldpi"/>
-    <gap:splash src="splash-2.png" density="port-mdpi"/>
-    <gap:splash src="splash-2.png" density="port-xhdpi"/> 
+     <gap:splash src="splash-2.png" gap:qualifier="port-xdpi"  gap:platform="android" />
+  <gap:splash src="splash-2.png" gap:qualifier="port-ldpi" gap:platform="android" />
+    <gap:splash src="splash-2.png" gap:qualifier="port-mdpi" gap:platform="android" />
+    <gap:splash src="splash-2.png" gap:qualifier="port-xhdpi" gap:platform="android" /> 
 </platform>
  
-    <!-- SPLASH SCREEN  -->
+    <!-- SPLASH SCREEN 
     <gap:splash src="splash-2.png"  orientation="portrait"/>
     <gap:splash src="splash-1.png"  orientation="landscape"/>
-
+ -->
     <!-- PLUGINS -->
 	<gap:plugin name="org.apache.cordova.camera" />
 
 	<!-- PREFERENCES -->
      <preference name="SplashScreen" value="screen" />
-     <preference name="SplashScreenDelay" value="2500" />
+     <preference name="SplashScreenDelay" value="4000" />
     
 <!--
     <preference name="orientation" value="default" />
