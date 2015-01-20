@@ -117,6 +117,11 @@
 			} else {
 				alert( "CAMERA KO" );
 			}
+			if ( navigator.geolocation ){
+				alert( "GEOLOC OK" + navigator.geolocation );
+			} else {
+				alert( "GEOLOC KO" );
+			}
 		}	
 
 	</script>
