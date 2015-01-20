@@ -99,6 +99,9 @@
 			function geoSuccess( position ) {
 				return 'Latitude : ' + position.coords.latitude + "\n" + 'Longitude : ' + position.coords.longitude;
 			}
+			function geoError ( error ) {
+				return "GEOLOC ERROR : code = " + error.code + " : message : " + error.message;
+			}
 		// test notifications
 		function onDeviceReady() {
 			// alert( device.phoneGap );
@@ -120,7 +123,7 @@
 				alert( "CAMERA KO" );
 			}
 			if ( navigator.geolocation ){
-				alert( "GEOLOC OK" + getCoords );
+				alert( "GEOLOC OK" + getCoords() );
 			} else {
 				alert( "GEOLOC KO" );
 			}
