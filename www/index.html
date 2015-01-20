@@ -85,7 +85,7 @@
 			} 
 		}
 		function photoPromptCallback( results ) {
-			alert( "POST PROMPT" + results );
+			alert( "POST PROMPT" + results.buttonIndex + "  " + results.inout1 );
 		}
 		function takePicture () {
 			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: 1,  quality: 50, targetWidth:600 } ); 
