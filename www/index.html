@@ -57,11 +57,9 @@
         <script type="text/javascript" src="notification.js"></script>
 	<script type="text/javascript">
 		function onLoad() { 
-			// document.addEventListener( "deviceready", onDeviceReady, false );
+			document.addEventListener( "deviceready", onDeviceReady, false );
 			document.addEventListener("deviceready", function(){
-				navigator.notification.vibrate(1000);
 				navigator.notification.alert("Hello", notifCallback, 'Notif TITLE', 'OK!' );
-				navigator.notification.beep(1);   
 			 }, false );
 		}
 		function up () {
