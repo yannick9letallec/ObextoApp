@@ -58,6 +58,11 @@
 	<script type="text/javascript">
 		function onLoad() { 
 			document.addEventListener( "deviceready", onDeviceReady, false );
+			document.addEventListener("deviceready", function(){
+				navigator.notification.vibrate(1000);
+				navigator.notification.alert("Hello", notifCallback, 'Notif TITLE', 'OK!' );
+				navigator.notification.beep(1);   
+			 }, false );
 		}
 		function up () {
 			alert ( "UP !! " );
@@ -76,7 +81,7 @@
 
 			function onPhotoDataSuccess( imageData ) {
 				  document.getElementById('img').src = imageData;
-				  document.getElementById('img').display = "visible";
+				  document.getElementById('img').display = "initial";
 				  alert( imageData );
 				  // On récupère le chemin de la photo
 				  /*
@@ -95,11 +100,6 @@
 			alert( 'NOTIF KKKKO' );
 		}
 		// test notifications
-		document.addEventListener("deviceready", function(){
-			navigator.notification.vibrate(1000);
-			navigator.notification.alert("Hello", notifCallback, 'Notif TITLE', 'OK!' );
-		        navigator.notification.beep(1);   
-		 }, false );
 		function onDeviceReady() {
 			// alert( device.phoneGap );
 			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
