@@ -156,21 +156,10 @@
 			document.addEventListener( "volumeupbutton", up, false );
 			document.addEventListener( "volumedownbutton", down, false );
 
-			if ( navigator.notification ){
-				//alert( "notification OK" );
-				navigator.notification.alert( 'PhoneGap is Ready to play with Devices !!', notifCallback, 'NOTIF OK', 'OK !' );
+			if ( window.plugins.speechrecognizer ) {
+				alert( "Speech OK" );
 			} else {
-				alert( "notification KO" + navigator.notification );
-			}
-			if ( navigator.camera ){
-				alert( "CAMERA OK" );
-			} else {
-				alert( "CAMERA KO" );
-			}
-			if ( navigator.geolocation ){
-				alert( "GEOLOC OK" );
-			} else {
-				alert( "GEOLOC KO" );
+				alert( "Speech KO" );
 			}
 			getCoords();
 		}	
