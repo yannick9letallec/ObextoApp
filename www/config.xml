@@ -46,7 +46,7 @@
 	<gap:plugin name="org.apache.cordova.vibration" />
 	<gap:plugin name="org.apache.cordova.dialogs" />
 	<gap:plugin name="org.apache.cordova.geolocation" />
-	<gap:plugin name="me.rahul.plugins.speechrecognition"/> 
+	<gap:plugin name="org.apache.cordova.speech.speechrecognition"/> 
 
 
 	<!-- PREFERENCES -->
