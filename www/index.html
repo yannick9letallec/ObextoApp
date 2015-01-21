@@ -36,7 +36,10 @@
 	    <button id="b1" name="launchPhoto" type="button" value="TestButtonValue" > CHANGE TEXTE </button>
 	    <br />
 	    <button id="b2" name="launchPhoto" type="button" value="TestButtonValue" ontouchstart="javascript: alert('BUTTON TOUCH');"> TOUCH EVENT CAPTURE </button>
+	    <br />
 	    <button id="b3" name="launchPhoto" type="button" value="TestButtonValue" > PHOTO </button>
+	    <br />
+	    <button id="b4" name="launchSpeech" type="button" value="TestButtonValue" > SPEECH NOW ! </button>
 
 	<a href="http://www.touch-pico.fr"> TOUCH OICO LINK </a>
 	</div>
@@ -129,11 +132,26 @@
 				document.getElementById( 'coordsReceiver' ).innerHTML = res;
 			}
 		}
+		function startSpeech () {
+			var maxMatches = 5;
+			var promptString = "Speak Now !";
+			var language = "fr_FR";
+			window.plugins.speechrecognizer.startRecognize( 
+				function( result ) {
+					alert( result );
+				},
+				function( errorMessage ) {
+					alert( "Erreur : " + errorMessage );
+				},
+				maxMatches, promptString, language 
+			);
+		}
 		// test notifications
 		function onDeviceReady() {
 			// alert( device.phoneGap );
 			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
 			document.getElementById( "b3" ).addEventListener( "touchstart", selectPictureSrc, false );
+			document.getElementById( "b4" ).addEventListener( "touchstart", startSpeech, false );
 			document.addEventListener( "menubutton", menu, false );
 			document.addEventListener( "volumeupbutton", up, false );
 			document.addEventListener( "volumedownbutton", down, false );
