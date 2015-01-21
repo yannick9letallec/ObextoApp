@@ -43,6 +43,7 @@
 	<gap:plugin name="org.apache.cordova.vibration" />
 	<gap:plugin name="org.apache.cordova.dialogs" />
 	<gap:plugin name="org.apache.cordova.geolocation" />
+	<gap:plugin name="com.phonegap.plugins.speech" />
 
 	<!-- PREFERENCES -->
      <preference name="SplashScreen" value="screen" />
