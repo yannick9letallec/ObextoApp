@@ -61,7 +61,7 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="camera.js"></script>
-        <script type="text/javascript" src="SpeechRecognizer.js"></script>
+        <script type="text/javascript" src="SpeechRecognition.js"></script>
         <script type="text/javascript" src="notification.js"></script>
 	<script type="text/javascript">
 		function onLoad() { 
@@ -156,7 +156,7 @@
 			document.addEventListener( "volumeupbutton", up, false );
 			document.addEventListener( "volumedownbutton", down, false );
 			function testSpeech( ) {
-				if ( navigator.speechrecognizer ) {
+				if ( speechrecognizer in window) {
 					alert( "Speech OK" );
 				} else {
 					alert( "Speech KO" + window.webkitSpeechRecognition.abcObject );
