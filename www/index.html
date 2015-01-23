@@ -83,7 +83,7 @@
 			} catch ( e ) {
 				alert( e.message );
 			} finally {
-				var text = document.createTextNode( "ESSAI IN THE FINALLY" );
+				var text = document.createTextNode( "ESSAI IN FINALLY" );
 				document.appendChild( text );
 			} 
 		}
@@ -149,18 +149,18 @@
 			// alert( device.phoneGap );
 			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
 			document.getElementById( "b3" ).addEventListener( "touchstart", selectPictureSrc, false );
-			document.getElementById( "b4" ).addEventListener( "touchstart", testSpeech, false );
+			// document.getElementById( "b4" ).addEventListener( "touchstart", testSpeech, false );
 			document.addEventListener( "menubutton", menu, false );
 			document.addEventListener( "volumeupbutton", up, false );
 			document.addEventListener( "volumedownbutton", down, false );
-			function testSpeech( ) {
-				if ( speechrecognizer in window) {
+			/* function testSpeech( ) {
+				if ( navigator.speechrecognizer ) {
 					alert( "Speech OK" );
 				} else {
 					alert( "Speech KO" + window.webkitSpeechRecognition.abcObject );
 				}
 				startSpeech();
-			}
+			} */
 			getCoords();
 		}	
 
