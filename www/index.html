@@ -62,6 +62,7 @@
         <script type="text/javascript" src="SpeechRecognizer.js"></script>
         <script type="text/javascript" src="notification.js"></script>
 	<script type="text/javascript">
+		/*
 		function clickButton () {
 			document.getElementById('b1').innerHTML = "BONJOUR MAUVOISIN !!";
 		}
@@ -74,7 +75,6 @@
 		function menu () {
 			alert( "MENU SELECT" );
 		}
-		/*
 		function selectPictureSrc () {
 			try {
 				navigator.notification.confirm( "Choix Image Source :", photoConfirmCallback, "Image Source", ["CAMERA", "GALLERY" ] ); 
@@ -147,7 +147,7 @@
 			document.addEventListener( "deviceready", onDeviceReady, false );
 		}
 		function onDeviceReady() {
-			// alert( device.phoneGap );
+			alert( "TEST" + device.phoneGap );
 			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
 			/* document.getElementById( "b3" ).addEventListener( "touchstart", selectPictureSrc, false );
 			document.getElementById( "b4" ).addEventListener( "touchstart", testSpeech, false ); */
