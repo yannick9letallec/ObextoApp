@@ -62,18 +62,19 @@
         <script type="text/javascript" src="SpeechRecognizer.js"></script>
         <script type="text/javascript" src="notification.js"></script>
 	<script type="text/javascript">
+		function clickButton () {
+			document.getElementById('b1').innerHTML = "BONJOUR MAUVOISIN !!";
+		}
 		function up () {
 			alert ( "UP !! " );
 		}
 		function down () {
 			alert ( "DOWN !! " );
 		}
-		function clickButton () {
-			document.getElementById('b1').innerHTML = "BONJOUR MAUVOISIN !!";
-		}
 		function menu () {
 			alert( "MENU SELECT" );
 		}
+		/*
 		function selectPictureSrc () {
 			try {
 				navigator.notification.confirm( "Choix Image Source :", photoConfirmCallback, "Image Source", ["CAMERA", "GALLERY" ] ); 
@@ -107,7 +108,7 @@
 				  // On affiche la preview
 				  // On affiche le boutton de suppression
 				  document.getElementById('supprimerImage').display = "visible";;
-				  */
+				  */ /*
 			}
 			function onFail ( msg ) {
 				alert( "Impossible de lancer l'appreil photo : " + msg  );
@@ -140,7 +141,7 @@
 				},
 				maxMatches, promptString, language 
 			);
-		}
+		} */
 		// INITIALISATION /////////////////////////////////////////////////
 		function onLoad() { 
 			document.addEventListener( "deviceready", onDeviceReady, false );
@@ -148,19 +149,19 @@
 		function onDeviceReady() {
 			// alert( device.phoneGap );
 			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
-			document.getElementById( "b3" ).addEventListener( "touchstart", selectPictureSrc, false );
-			document.getElementById( "b4" ).addEventListener( "touchstart", testSpeech, false );
+			/* document.getElementById( "b3" ).addEventListener( "touchstart", selectPictureSrc, false );
+			document.getElementById( "b4" ).addEventListener( "touchstart", testSpeech, false ); */
 			document.addEventListener( "menubutton", menu, false );
 			document.addEventListener( "volumeupbutton", up, false );
 			document.addEventListener( "volumedownbutton", down, false );
-			function testSpeech( ) {
+			/* function testSpeech( ) {
 				if ( navigator.speechrecognizer ) {
 					alert( "Speech OK" );
 				} else {
 					alert( "Speech KO" );
 				}
 				startSpeech();
-			}
+			} */
 			getCoords();
 		}	
 
