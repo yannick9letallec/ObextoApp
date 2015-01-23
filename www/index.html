@@ -163,7 +163,10 @@
 			getCoords(); */
 		}	
 		function onLoad() { 
-			document.addEventListener( "deviceready", onDeviceReady, true );
+			document.addEventListener( "deviceready", function() {
+					
+				alert( "TEST" );
+			}, true );
 			alert( "LOAD" );
 		}
 
