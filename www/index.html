@@ -144,10 +144,6 @@
 		} */
 		// INITIALISATION /////////////////////////////////////////////////
 			alert( "GLOB" );
-		function onLoad() { 
-			document.addEventListener( "deviceready", onDeviceReady, false );
-			alert( "LOAD" );
-		}
 		function onDeviceReady() {
 			alert( "TEST" );
 			/* document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
@@ -166,6 +162,10 @@
 			} 
 			getCoords(); */
 		}	
+		function onLoad() { 
+			document.addEventListener( "deviceready", onDeviceReady, false );
+			alert( "LOAD" );
+		}
 
 	</script>
     </body>
