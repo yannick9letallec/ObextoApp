@@ -63,7 +63,6 @@
         <script type="text/javascript" src="SpeechRecognizer.js"></script>
         <script type="text/javascript" src="notification.js"></script>
 	<script type="text/javascript">
-		/*
 		function clickButton () {
 			document.getElementById('b1').innerHTML = "BONJOUR MAUVOISIN !!";
 		}
@@ -109,7 +108,7 @@
 				  // On affiche la preview
 				  // On affiche le boutton de suppression
 				  document.getElementById('supprimerImage').display = "visible";;
-				  */ /*
+				  */ 
 			}
 			function onFail ( msg ) {
 				alert( "Impossible de lancer l'appreil photo : " + msg  );
@@ -142,24 +141,21 @@
 				},
 				maxMatches, promptString, language 
 			);
-		} */
+		} 
 		// INITIALISATION /////////////////////////////////////////////////
-			alert( "GLOB" );
 		function onLoad() { 
 			//document.addEventListener( "deviceready", onDeviceReady, false );
 			onDeviceReady();
-			alert( "LOAD" );
 		}
 
 		function onDeviceReady() {
-			alert( "TEST" );
-			/* document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
+			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
 			document.getElementById( "b3" ).addEventListener( "touchstart", selectPictureSrc, false );
 			document.getElementById( "b4" ).addEventListener( "touchstart", testSpeech, false ); 
 			document.addEventListener( "menubutton", menu, false );
 			document.addEventListener( "volumeupbutton", up, false );
 			document.addEventListener( "volumedownbutton", down, false );
-			/* function testSpeech( ) {
+			function testSpeech( ) {
 				if ( navigator.speechrecognizer ) {
 					alert( "Speech OK" );
 				} else {
@@ -167,7 +163,7 @@
 				}
 				startSpeech();
 			} 
-			getCoords(); */
+			getCoords(); 
 		}	
 	</script>
     </body>
