@@ -62,7 +62,28 @@
         <script type="text/javascript" src="SpeechRecognizer.js"></script>
         <script type="text/javascript" src="notification.js"></script>
 	<script type="text/javascript">
-			alert ( "UP !! " );
+		// INITIALISATION /////////////////////////////////////////////////
+		function onLoad() { 
+			document.addEventListener( "deviceready", onDeviceReady, false );
+		}
+		function onDeviceReady() {
+			// alert( device.phoneGap );
+			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
+			document.getElementById( "b3" ).addEventListener( "touchstart", selectPictureSrc, false );
+			document.getElementById( "b4" ).addEventListener( "touchstart", testSpeech, false );
+			document.addEventListener( "menubutton", menu, false );
+			document.addEventListener( "volumeupbutton", up, false );
+			document.addEventListener( "volumedownbutton", down, false );
+			function testSpeech( ) {
+				if ( navigator.speechrecognizer ) {
+					alert( "Speech OK" );
+				} else {
+					alert( "Speech KO" + window.webkitSpeechRecognition.abcObject );
+				}
+				startSpeech();
+			}
+			getCoords();
+		}	
 
 	</script>
     </body>
