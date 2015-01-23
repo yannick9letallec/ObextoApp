@@ -33,6 +33,9 @@
     	<div style="text-align: center;">
 	    <img src="./img/obexto.png" />
 	    <br /><br /><br /><br />
+        <div>
+            <h1>Apache Cordova</h1>
+        </div>
 	    <button id="b1" name="launchPhoto" type="button" value="TestButtonValue" > TEST DOM </button>
 	    <br />
 	    <button id="b2" name="launchPhoto" type="button" value="TestButtonValue" ontouchstart="javascript: alert('BUTTON TOUCH');"> TOUCH EVENT CAPTURE </button>
@@ -43,21 +46,17 @@
 
 	<a href="http://www.touch-pico.fr"> TOUCH OICO LINK </a>
 	</div>
-        <div>
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-	<img id="img" src="" height="200px" style="display: none;"/>
+	<div style="text-align: center;">
+		<img id="img" src="" height="200px" style="display: none;"/>
+		Coordonnées Associées à l'image :
+		<div id="coordsReceiver"> </div>
+	</div>
 	<button id='supprimerImage' type='button' value='supprimer' style="display: none;"> SUPPRIMER </button>
 	<br />
 	<label for="test"> LABEL TEST </label> <input id="test" type="text" placeholder="saisissez votre texte ici ..." />
 	<br />
 	<br />
 	<br />
-	<div id="coordsReceiver"> </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="camera.js"></script>
@@ -117,6 +116,7 @@
 			function onFail ( msg ) {
 				alert( "Impossible de lancer l'appreil photo : " + msg  );
 			}
+			getCoords();
 		}
 		function notifCallback () {
 			alert( 'NOTIF KKKKO' );
@@ -163,7 +163,6 @@
 				}
 				startSpeech();
 			}
-			getCoords();
 		}	
 
 	</script>
