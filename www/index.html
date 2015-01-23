@@ -99,6 +99,7 @@
 			// Base64 :: Camera.DestinationType.DATA_URL
 			// URL :: Camera.DestinationType.FILE_URI
 			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: x,  quality: 50, targetHeight:200, destinationType: Camera.DestinationType.FILE_URI } ); 
+			getCoords();
 
 			function onPhotoDataSuccess( imageSrc ) {
 				  document.getElementById('img').src = encodeURI( imageSrc ); //  "data:image/jpeg;base64,"
@@ -116,7 +117,6 @@
 			function onFail ( msg ) {
 				alert( "Impossible de lancer l'appreil photo : " + msg  );
 			}
-			getCoords();
 		}
 		function notifCallback () {
 			alert( 'NOTIF KKKKO' );
