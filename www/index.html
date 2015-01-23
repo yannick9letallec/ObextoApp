@@ -103,7 +103,6 @@
 			function onPhotoDataSuccess( imageSrc ) {
 				  document.getElementById('img').src = encodeURI( imageSrc ); //  "data:image/jpeg;base64,"
 				  document.getElementById('img').style.display = "initial";
-				  getCoords();
 				  alert( "A : " + imageSrc + "\n\r" + "B : " + encodeURI( imageSrc ) );
 				  // On récupère le chemin de la photo
 				  /*
