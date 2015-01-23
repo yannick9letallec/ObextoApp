@@ -26,6 +26,8 @@
 		<param name="android-package" value="org.apache.cordova.App" />
 	</feature>
 
+	<icon src="icon.png" platform="android" width="57" height="57" />
+
     <!-- specify preferences -->
 <platform name="android">
     <gap:splash src="splash-1.png" gap:qualifier="land-ldpi" gap:platform="android" />
