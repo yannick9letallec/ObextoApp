@@ -133,15 +133,21 @@
 			var maxMatches = 5;
 			var promptString = "Speak Now !";
 			var language = "fr_FR";
-			window.navigator.speechrecognizer.recognize( 
+			window.plugins.speechrecognizer.startRecognize( 
 				function( result ) {
 					alert( result );
 				},
 				function( errorMessage ) {
 					alert( "Erreur : " + errorMessage );
-				},
-				maxMatches, promptString, language 
-			);
+				}, maxMatches, promptString, language );
+		} 
+		function testSpeech( ) {
+			if ( window.plugins..speechrecognizer ) {
+				alert( "Speech OK" );
+				startSpeech();
+			} else {
+				alert( "Speech KO" );
+			}
 		} 
 		// INITIALISATION /////////////////////////////////////////////////
 		function onLoad() { 
@@ -156,14 +162,6 @@
 			document.addEventListener( "menubutton", menu, false );
 			document.addEventListener( "volumeupbutton", up, false );
 			document.addEventListener( "volumedownbutton", down, false );
-			function testSpeech( ) {
-				if ( navigator.speechrecognizer ) {
-					alert( "Speech OK" );
-				} else {
-					alert( "Speech KO" );
-				}
-				startSpeech();
-			} 
 		}	
 	</script>
     </body>
