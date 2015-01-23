@@ -48,8 +48,6 @@
 	</div>
 	<div style="text-align: center;">
 		<img id="img" src="" height="200px" style="display: none;"/>
-		Coordonnées Associées à l'image :
-		<div id="coordsReceiver"> </div>
 	</div>
 	<button id='supprimerImage' type='button' value='supprimer' style="display: none;"> SUPPRIMER </button>
 	<br />
@@ -57,6 +55,7 @@
 	<br />
 	<br />
 	<br />
+	<div id="coordsReceiver"> </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="camera.js"></script>
@@ -162,6 +161,7 @@
 				}
 				startSpeech();
 			}
+			getCoords();
 		}	
 
 	</script>
