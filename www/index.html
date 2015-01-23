@@ -49,6 +49,7 @@
 	</div>
 	<div style="text-align: center;">
 		<img id="img" src="" height="200px" style="display: none;"/>
+		<div id="coordsReceiver"> </div>
 	</div>
 	<button id='supprimerImage' type='button' value='supprimer' style="display: none;"> SUPPRIMER </button>
 	<br />
@@ -56,7 +57,6 @@
 	<br />
 	<br />
 	<br />
-	<div id="coordsReceiver"> </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="camera.js"></script>
@@ -97,6 +97,7 @@
 			// URL :: Camera.DestinationType.FILE_URI
 			 navigator.camera.getPicture( onPhotoDataSuccess, onFail, { sourceType: x,  quality: 50, targetHeight:200, destinationType: Camera.DestinationType.FILE_URI } ); 
 
+			getCoords(); 
 			function onPhotoDataSuccess( imageSrc ) {
 				  document.getElementById('img').src = encodeURI( imageSrc ); //  "data:image/jpeg;base64,"
 				  document.getElementById('img').style.display = "initial";
@@ -163,7 +164,6 @@
 				}
 				startSpeech();
 			} 
-			getCoords(); 
 		}	
 	</script>
     </body>
