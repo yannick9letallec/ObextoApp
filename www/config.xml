@@ -51,7 +51,9 @@
 	<gap:plugin name="org.apache.cordova.vibration" />
 	<gap:plugin name="org.apache.cordova.dialogs" />
 	<gap:plugin name="org.apache.cordova.geolocation" />
+<platform name="android">
 	<gap:plugin name="com.applicationnexus.plugins.speechrecognition" version="0.0.1" />
+</platform>
 	<gap:plugin name="com.phonegap.plugins.speech"/>
 	<!-- <gap:plugin name="com.manueldeveloper.speech-recognizer" />
 	<gap:plugin name="org.apache.cordova.speech.speechrecognition"/> -->

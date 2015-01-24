@@ -50,6 +50,10 @@
 	<div style="text-align: center;">
 		<img id="img" src="" height="200px" style="display: none;"/>
 		<div id="coordsReceiver"> </div>
+		<br />
+		<div>
+			<textarea id="receivNote" rows="5" cols="50" placeholder="attente de la saisie vocale ...."></textarea>
+		</div>
 	</div>
 	<button id='supprimerImage' type='button' value='supprimer' style="display: none;"> SUPPRIMER </button>
 	<br />
@@ -121,7 +125,8 @@
 		function getCoords() {
 			navigator.geolocation.getCurrentPosition( geoSuccess, geoError );
 			function geoSuccess( position ) {
-				var res = '[OK] :: Latitude : ' + position.coords.latitude + "\n" + 'Longitude : ' + position.coords.longitude;
+				// no var to keep res local
+				res = '[OK] :: Latitude : ' + position.coords.latitude + "\n" + 'Longitude : ' + position.coords.longitude;
 				document.getElementById( 'coordsReceiver' ).innerHTML = res;
 			}
 			function geoError ( error ) {
@@ -130,25 +135,39 @@
 			}
 		}
 		function startSpeech () {
-			var maxMatches = 5;
+			var maxMatches = 5000;
 			var promptString = "Speak Now !";
 			var language = "fr_FR";
 			window.plugins.speechrecognizer.startRecognize( 
 				function( result ) {
-					alert( result );
+					alert( "ASR OK : " + result );
+					document.getElementById('receivNote').value = result;
 				},
 				function( errorMessage ) {
 					alert( "Erreur : " + errorMessage );
 				}, maxMatches, promptString, language );
 		} 
 		function testSpeech( ) {
-			if ( window.plugins..speechrecognizer ) {
+			if ( window.plugins.speechrecognizer ) {
 				alert( "Speech OK" );
 				startSpeech();
 			} else {
 				alert( "Speech KO" );
 			}
 		} 
+		function sendSOAP() {
+			alert( 'essai SOAP' );
+			if ( window.XMLHttpRequest ) {
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function () {
+					if ( xhr.readystate == 4 && xhr.status == 200 ) {
+						document.getElementById('receivSOAP').placeholder = "blabla";
+					}
+				}
+			} 
+			xhr.open( "POST", "http://developpement.obexto.fr/Services/Mobile.asmx", true );
+			xhr.send( soapMsg );
+		}
 		// INITIALISATION /////////////////////////////////////////////////
 		function onLoad() { 
 			//document.addEventListener( "deviceready", onDeviceReady, false );
@@ -159,10 +178,40 @@
 			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
 			document.getElementById( "b3" ).addEventListener( "touchstart", selectPictureSrc, false );
 			document.getElementById( "b4" ).addEventListener( "touchstart", testSpeech, false ); 
+			document.getElementById( "b5" ).addEventListener( "touchstart", sendSOAP, false ); 
 			document.addEventListener( "menubutton", menu, false );
 			document.addEventListener( "volumeupbutton", up, false );
 			document.addEventListener( "volumedownbutton", down, false );
 		}	
+
+		soapMsg = "<?xml version='1.0' encoding='utf-8'?>" +
+			"<soap:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/'>" + 
+		 	"<soap:Body>" + 
+		      		"<ExecuteCommand xmlns='http://obexto.fr/Services'>" +
+		        		"<userName>ylt@DEVELOPPEMENT</userName>" + 
+			          	"<password>yL3T4ll3c</password>" +
+				        "<commandName>mobile.TEST_APPLI_MOBILE</commandName>" +
+					"<parameters>" + 
+				                "<ActualParameter>" + 
+				         	        "<ParameterName>@CONT_DOC</ParameterName>" +
+							"<Value xsi:type='xsd:base64Binary'>" + imgDATA + "</Value>" +
+						"</ActualParameter>" +
+						"<ActualParameter>" +
+					         	"<ParameterName>@NOM_FIC</ParameterName>" +
+							"<Value xsi:type='xsd:string'>" + fileName + "</Value>" +
+						"</ActualParameter>" +
+	  			                "<ActualParameter>" + 
+					                  "<ParameterName>@TXT_LIBR</ParameterName>" +
+						          "<Value xsi:type='xsd:string'>" + vocalNote + "</Value>" +
+					        "</ActualParameter>" +
+					"</parameters>" +															    			"</ExecuteCommand>" +
+			"</soap:Body>" +
+		      "</soap:Envelope>";
+
+		     var imgDATA = "sd:kfj gndgkjh nq:qdsfkg ";
+		     var fileName = "../text/rep/image-cible-futur.jpg";
+		     var vocalNote = "description vocale de l'inspiratio du moment";
+
 	</script>
     </body>
 </html>
