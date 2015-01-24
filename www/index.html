@@ -26,6 +26,8 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 	<meta name="author" content="Yannick LE TALLEC" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
         <title>Hello World</title>
     </head>
     <body onload="onLoad()" style="background-color: orange;">	
@@ -33,31 +35,30 @@
     	<div style="text-align: center;">
 	    <img src="./img/obexto.png" />
 	    <br /><br /><br /><br />
-        <div class="app">
-            <h1>Apache Cordova</h1>
-	    <div id="deviceready"> Waiting </div>
-        </div>
-	    <button id="b1" name="launchPhoto" type="button" value="TestButtonValue" > TEST DOM </button>
-	    <br />
-	    <button id="b2" name="launchPhoto" type="button" value="TestButtonValue" ontouchstart="javascript: alert('BUTTON TOUCH');"> TOUCH EVENT CAPTURE </button>
-	    <br />
-	    <button id="b3" name="launchPhoto" type="button" value="TestButtonValue" > SNAP PHOTO </button>
-	    <br />
-	    <button id="b4" name="launchSpeech" type="button" value="TestButtonValue" > SPEECH NOW ! </button>
-
-	<a href="http://www.touch-pico.fr"> TOUCH OICO LINK </a>
-	</div>
-	<div style="text-align: center;">
-		<img id="img" src="" height="200px" style="display: none;"/>
-		<div id="coordsReceiver"> </div>
+		<a id="b3" role="button" name="launchPhoto" class="btn btn-success" > IMAGE </a>
 		<br />
-		<div>
-			<textarea id="receivNote" rows="5" cols="50" placeholder="attente de la saisie vocale ...."></textarea>
+		<!-- partie découverte après la prise d'image -->
+		<div style="text-align: center;">
+			<img id="img" src="" height="200px" style="display: none;"/>
+			<div id="coordsReceiver"> </div>
+			<br />
 		</div>
+		<br />
+		<a id="b4" role="button" name="launchSpeech" class="btn btn-success"> PARLEZ ! </a>
+		<div>
+			<textarea id="receivNote" rows="5" cols="50" placeholder="attente de la saisie vocale ...." style="display: initial;"></textarea>
+		</div>
+		<br />
+		<a id="b5" role="button" name="launchSoap" class="btn btn-success"> TRANSMETTRE ! </a>
+		<br />
+		<br />
+
+			<div id="retourSOAP"> Retour SOAP ... </div>
+
 	</div>
 	<button id='supprimerImage' type='button' value='supprimer' style="display: none;"> SUPPRIMER </button>
 	<br />
-	<label for="test"> LABEL TEST </label> <input id="test" type="text" placeholder="saisissez votre texte ici ..." />
+	<a href="http://www.obexto.fr"> Aller sur le site Obexto </a>
 	<br />
 	<br />
 	<br />
@@ -67,9 +68,6 @@
         <script type="text/javascript" src="SpeechRecognizer.js"></script>
         <script type="text/javascript" src="notification.js"></script>
 	<script type="text/javascript">
-		function clickButton () {
-			document.getElementById('b1').innerHTML = "BONJOUR MAUVOISIN !!";
-		}
 		function up () {
 			alert ( "UP !! " );
 		}
@@ -119,9 +117,6 @@
 				alert( "Impossible de lancer l'appreil photo : " + msg  );
 			}
 		}
-		function notifCallback () {
-			alert( 'NOTIF KKKKO' );
-		}
 		function getCoords() {
 			navigator.geolocation.getCurrentPosition( geoSuccess, geoError );
 			function geoSuccess( position ) {
@@ -135,13 +130,14 @@
 			}
 		}
 		function startSpeech () {
-			var maxMatches = 5000;
+			var maxMatches = 50
 			var promptString = "Speak Now !";
 			var language = "fr_FR";
 			window.plugins.speechrecognizer.startRecognize( 
 				function( result ) {
 					alert( "ASR OK : " + result );
-					document.getElementById('receivNote').value = result;
+					document.getElementById('receivNote').innerHTML = result;
+					// document.getELementById('receivNote').style.display = "inherit";
 				},
 				function( errorMessage ) {
 					alert( "Erreur : " + errorMessage );
@@ -156,17 +152,32 @@
 			}
 		} 
 		function sendSOAP() {
-			alert( 'essai SOAP' );
 			if ( window.XMLHttpRequest ) {
 				var xhr = new XMLHttpRequest();
 				xhr.onreadystatechange = function () {
+					alert( "xhr state : " + xhr.readystate + ", xhr status : " + xhr.status );
+					document.getElementById('retourSOAP').innerHTML = "blabla";
 					if ( xhr.readystate == 4 && xhr.status == 200 ) {
-						document.getElementById('receivSOAP').placeholder = "blabla";
-					}
+						alert( "XHR PILE POIL" );
+					} 
 				}
 			} 
-			xhr.open( "POST", "http://developpement.obexto.fr/Services/Mobile.asmx", true );
-			xhr.send( soapMsg );
+				xhr.open( "POST", "http://developpement.obexto.fr/Services/Mobile.asmx", true );
+			xhr.setRequestHeader( "Content-Type", "text/xml; charset=utf-8;" );
+			xhr.setRequestHeader( "SOAPAction", "ExecuteCommand;" );
+
+			//alert( soapMsg );
+			try { 
+				xhr.send( soapMsg );
+			} catch( e ) { alert ( e.message ); }
+			alert( "Response Text : " + xhr.responseText );
+		}
+		function essaiCam() {
+			if( navigator.camera ) {
+				alert( "camera ok" );
+			} else {
+				alert( "camera ko" );
+			}
 		}
 		// INITIALISATION /////////////////////////////////////////////////
 		function onLoad() { 
@@ -175,14 +186,15 @@
 		}
 
 		function onDeviceReady() {
-			document.getElementById( "b1" ).addEventListener( "touchstart", clickButton, false );
+			// 
 			document.getElementById( "b3" ).addEventListener( "touchstart", selectPictureSrc, false );
 			document.getElementById( "b4" ).addEventListener( "touchstart", testSpeech, false ); 
-			document.getElementById( "b5" ).addEventListener( "touchstart", sendSOAP, false ); 
+			document.getElementById( "b5" ).addEventListener( "click", sendSOAP, false ); 
 			document.addEventListener( "menubutton", menu, false );
 			document.addEventListener( "volumeupbutton", up, false );
 			document.addEventListener( "volumedownbutton", down, false );
 		}	
+
 
 		soapMsg = "<?xml version='1.0' encoding='utf-8'?>" +
 			"<soap:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/'>" + 

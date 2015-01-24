@@ -8,7 +8,8 @@
         Yannick @ Obexto 
     </author>
     <content src="index.html" />
-    <access origin="http://developpement.obexto.fr/" subdomains="true" />
+    <access origin="*" />
+    <!-- <access origin="http://developpement.obexto.fr/" subdomains="true" /> -->
     <!-- specify platform -->
     <gap:platform name="android" />
 
