@@ -10,7 +10,7 @@
     <content src="index.html" />
     <access origin="*" />
     <!-- specify platform -->
-    <gap:platform name="android" />
+
 
     <!-- specify preferences -->
     <preference name="orientation" value="default" />
